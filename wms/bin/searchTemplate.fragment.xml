@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ColumnListItem type="Navigation" press="onPress">
+    	<cells>
+    		<ObjectNumber number="{BinId}" />
+    		<Text text="{WarehouseId}" />
+    		<Text text="{StorageTypeId}" />
+    	</cells>
+    </ColumnListItem>
+</core:FragmentDefinition>

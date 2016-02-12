@@ -1,0 +1,6 @@
+SAPUI5ApplicationName=YWMS_DEMO
+SAPUI5ApplicationPackage=YELCHO_WMS
+SAPUI5ApplicationDescription=WMS Demo
+ExternalCodePage=Cp1252
+AcceptUnixStyleEol=True
+DeltaMode=True
