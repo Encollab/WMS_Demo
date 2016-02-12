@@ -2,10 +2,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
-    "sap/m/MessageToast",
-	"sap/ui/core/MessageType",
-    "sap/m/ButtonType",
-    "sap/m/BusyDialog",
     "yelcho/wmsdemo/util/formatter"
 ], function(Controller, History, formatter) {
     "use strict";

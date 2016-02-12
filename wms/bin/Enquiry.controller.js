@@ -34,7 +34,7 @@ sap.ui.define([
             oList.bindItems({
                 path: "/Bins",
                 parameters: {
-                    select: "WarehouseId,StorageTypeId,BinId"
+                    select: "WarehouseId,Warehouse,StorageType,BinId"
                 },
                 template: this._oBinTemplate,
                 filters: new Filter(filters, false)

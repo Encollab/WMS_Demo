@@ -16,10 +16,7 @@
                     <Text text="{/#Bins/BinId/@sap:label}" />
                 </Column>
                 <Column minScreenWidth="Small" demandPopin="true" width="auto">
-                    <Text text="{/#Bins/WarehouseId/@sap:label}" />
-                </Column>
-                <Column minScreenWidth="Small" demandPopin="true" width="auto">
-                    <Text text="{/#Bins/StorageTypeId/@sap:label}" />
+                    <Text text="{/#Bins/StorageType/@sap:label}" />
                 </Column>
             </columns>
         </Table>
