@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    <ColumnListItem type="Navigation" press="onPress">
+    <ColumnListItem type="Active" press="onPress">
     	<cells>
     		<ObjectIdentifier title="{BinId}" text="{Warehouse}" />
     		<Text text="{StorageType}" />

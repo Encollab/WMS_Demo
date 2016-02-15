@@ -13,7 +13,7 @@
             </headerToolbar>
             <columns>
                 <Column minScreenWidth="Small" demandPopin="true" width="auto">
-                    <Text text="{/#Materials/MaterialId/@sap:label}" />
+                    <Text text="{/#Materials/Material/@sap:label}" />
                 </Column>
             </columns>
         </Table>
