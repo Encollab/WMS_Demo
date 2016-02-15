@@ -1,0 +1,12 @@
+<mvc:View height="100%" controllerName="yelcho.wmsdemo.Dashboard" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m">
+    <Page id='dashboardPage' title="{i18n>appTitle}" enableScrolling="false">
+        <headerContent>
+        </headerContent>
+        <TileContainer tileDelete="handleTileDelete">
+            <StandardTile app:routePattern="bin" icon="sap-icon://folder" type="Monitor" title="Bin Enquiry" press="onPressTile" />
+            <StandardTile app:routePattern="stock" icon="sap-icon://inventory" type="Monitor" title="Stock Enquiry" press="onPressTile" />
+        </TileContainer>
+        <footer>
+        </footer>
+    </Page>
+</mvc:View>

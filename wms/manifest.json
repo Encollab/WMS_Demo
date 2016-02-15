@@ -70,7 +70,7 @@
             "routes": [{
                 "pattern": "",
                 "name": "default",
-                "target": "binEnquiry"
+                "target": "dashboard"
             }, {
                 "pattern": "bin",
                 "name": "bin",
@@ -81,6 +81,9 @@
                 "target": "binDetail"
             }],
             "targets": {
+                "dashboard": {
+                    "viewName": "Dashboard"
+                },
                 "binEnquiry": {
                     "viewName": "bin.Enquiry"
                 },
