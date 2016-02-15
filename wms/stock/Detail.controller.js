@@ -24,7 +24,7 @@ sap.ui.define([
                 oViewModel = new JSONModel({
                     busy: true,
                     delay: 0,
-                    quantItemListTitle: this.getResourceBundle().getText("binItemListTitle")
+                    binItemListTitle: this.getResourceBundle().getText("binItemListTitle")
                 });
 
             this.getRouter().getRoute("stockdetail").attachPatternMatched(this._onObjectMatched, this);
@@ -52,6 +52,13 @@ sap.ui.define([
                 }
                 oViewModel.setProperty("/binItemListTitle", sTitle);
             }
+        },
+        onBinPress: function(oEvent) {
+            var oItem = oEvent.getParameter('listItem').getBindingContext().getObject();
+            var binPath = "Bins(WarehouseId='"+oItem.WarehouseId+"',StorageTypeId='"+oItem.StorageTypeId+"',BinId='"+oItem.BinId+"')";
+            this.getRouter().navTo("bindetail", {
+                binPath: binPath
+            });
         },
         /* =========================================================== */
         /* internal methods                                            */

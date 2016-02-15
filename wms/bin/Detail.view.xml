@@ -16,7 +16,7 @@
             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <items>
                     <IconTabFilter text="{i18n>quantsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>quantsIconTabBarInfo}">
-                        <Table id="quantItemsList" width="auto" items="{Quants}" updateFinished="onQuantsUpdateFinished" noDataText="{i18n>quantLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+                        <Table id="quantItemsList" width="auto" items="{Quants}" updateFinished="onQuantsUpdateFinished" noDataText="{i18n>quantLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin" itemPress="onQuantPress">
                             <headerToolbar>
                                 <Toolbar id="lineItemsToolbar">
                                     <Title id="lineItemsHeader" text="{detailView>/quantItemListTitle}" />
@@ -34,7 +34,7 @@
                                 </Column>
                             </columns>
                             <items>
-                                <ColumnListItem>
+                                <ColumnListItem type='Active'>
                                     <cells>
                                         <ObjectIdentifier title="{Material}" text="{MaterialId}" />
                                         <ObjectNumber number="{

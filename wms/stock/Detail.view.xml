@@ -1,30 +1,23 @@
 <mvc:View controllerName="yelcho.wmsdemo.stock.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
-    <semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>stockDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+    <semantic:FullscreenPage id="page" showNavButton="{device>/system/phone}" navButtonPress="onNavBack" title="{i18n>stockDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
         <semantic:content>
-            <ObjectHeader responsive="true" fullScreenOptimized="false" title="{stockId}">
-                <attributes>
-                    <ObjectAttribute title="{/#stock/Warehouse/@sap:label}" text="{Warehouse}" />
-                    <ObjectAttribute title="{/#stock/StorageType/@sap:label}" text="{StorageType}" />
-                    <ObjectAttribute title="{/#stock/StorageLocation/@sap:label}" text="{StorageLocation}" />
-                    <ObjectAttribute title="{/#stock/Section/@sap:label}" text="{Section}" />
-                    <ObjectAttribute title="{/#stock/PickingArea/@sap:label}" text="{PickingArea}" visible="{= ${PickingArea} !== ''}" />
-                </attributes>
-                <statuses>
-                    <ObjectStatus title="{/#stock/BlockReason/@sap:label}" text="{BlockReason}" state="Error" visible="{= ${BlockReason} !== ''}"/>
-                </statuses>
+            <ObjectHeader responsive="true" fullScreenOptimized="false" title="{MaterialId}" intro="{Description}">
             </ObjectHeader>
             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <items>
                     <IconTabFilter text="{i18n>binsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>binsIconTabBarInfo}">
-                        <Table id="binItemsList" width="auto" items="{Bins}" updateFinished="onBinsUpdateFinished" noDataText="{i18n>binLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+                        <Table id="binItemsList" width="auto" items="{path:'Quants',parameters:{expand: 'Bin'}}" updateFinished="onBinsUpdateFinished" noDataText="{i18n>binLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin" itemPress="onBinPress">
                             <headerToolbar>
                                 <Toolbar id="lineItemsToolbar">
-                                    <Title id="lineItemsHeader" text="{detailView>/binsItemListTitle}" />
+                                    <Title id="binItemsHeader" text="{detailView>/binItemListTitle}" />
                                 </Toolbar>
                             </headerToolbar>
                             <columns>
-                                <Column>
-                                    <Text text="{/#Quant/MaterialId/@sap:label}" />
+                                <Column mergeDuplicates="true" minScreenWidth="Desktop" demandPopin="false">
+                                    <Text text="{/#Bin/Warehouse/@sap:label}" />
+                                </Column>
+                                <Column mergeDuplicates="true" mergeFunctionName="getTitle">
+                                    <Text text="{/#Quant/BinId/@sap:label}" />
                                 </Column>
                                 <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
                                     <Text text="{/#Quant/TotalStock/@sap:label}" />
@@ -34,9 +27,10 @@
                                 </Column>
                             </columns>
                             <items>
-                                <ColumnListItem>
+                                <ColumnListItem type='Active'>
                                     <cells>
-                                        <ObjectIdentifier title="{Material}" text="{MaterialId}" />
+                                        <Text text="{Bin/Warehouse}" />
+                                        <ObjectIdentifier title="{BinId} - {Bin/StorageType}" />
                                         <ObjectNumber number="{
 									path: 'TotalStock',
 									formatter: '.formatter.Number'

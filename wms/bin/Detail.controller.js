@@ -53,6 +53,12 @@ sap.ui.define([
                 oViewModel.setProperty("/quantItemListTitle", sTitle);
             }
         },
+        onQuantPress: function(oEvent) {
+            var oItem = oEvent.getParameter('listItem').getBindingContext().getObject();
+            this.getRouter().navTo("stockdetail", {
+                stockPath: "Materials('"+oItem.MaterialId+"')"
+            });
+        },
         /* =========================================================== */
         /* internal methods                                            */
         /* =========================================================== */
