@@ -79,6 +79,14 @@
                 "pattern": "bin/{binPath}",
                 "name": "bindetail",
                 "target": "binDetail"
+            }, {
+                "pattern": "stock",
+                "name": "stock",
+                "target": "stockEnquiry"
+            }, {
+                "pattern": "stock/{stockPath}",
+                "name": "stockdetail",
+                "target": "stockDetail"
             }],
             "targets": {
                 "dashboard": {
@@ -89,6 +97,12 @@
                 },
                 "binDetail": {
                     "viewName": "bin.Detail"
+                },
+                "stockEnquiry": {
+                    "viewName": "stock.Enquiry"
+                },
+                "stockDetail": {
+                    "viewName": "stock.Detail"
                 },
                 "objectNotFound": {
                     "viewName": "ObjectNotFound",

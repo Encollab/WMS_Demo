@@ -1,0 +1,25 @@
+<mvc:View controllerName="yelcho.wmsdemo.stock.Enquiry" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true">
+    <Page id="binEnquiryPage" title="{i18n>stockEnquiryTitle}" showNavButton="{device>/system/phone}" navButtonPress="onNavBack">
+        <headerContent>
+<!--             <core:Fragment fragmentName="yelcho.wmsdemo.info.InfoButton" type="XML" /> -->
+        </headerContent>
+        <Table id="binList" class="sapUiResponsiveMargin" width="auto" growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>stockListTitle}" />
+                    <ToolbarSpacer/>
+                    <SearchField width="50%" search="onSearchBins" />
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column minScreenWidth="Small" demandPopin="true" width="auto">
+                    <Text text="{/#Materials/MaterialId/@sap:label}" />
+                </Column>
+            </columns>
+        </Table>
+        <footer>
+            <Toolbar>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

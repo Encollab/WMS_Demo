@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ColumnListItem type="Navigation" press="onPress">
+    	<cells>
+    		<ObjectIdentifier title="{MaterialId}" text="{Description}" />
+    	</cells>
+    </ColumnListItem>
+</core:FragmentDefinition>

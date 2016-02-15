@@ -1,25 +1,25 @@
-<mvc:View controllerName="yelcho.wmsdemo.bin.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
-    <semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>binDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+<mvc:View controllerName="yelcho.wmsdemo.stock.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
+    <semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>stockDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
         <semantic:content>
-            <ObjectHeader responsive="true" fullScreenOptimized="false" title="{BinId}">
+            <ObjectHeader responsive="true" fullScreenOptimized="false" title="{stockId}">
                 <attributes>
-                    <ObjectAttribute title="{/#Bin/Warehouse/@sap:label}" text="{Warehouse}" />
-                    <ObjectAttribute title="{/#Bin/StorageType/@sap:label}" text="{StorageType}" />
-                    <ObjectAttribute title="{/#Bin/StorageLocation/@sap:label}" text="{StorageLocation}" />
-                    <ObjectAttribute title="{/#Bin/Section/@sap:label}" text="{Section}" />
-                    <ObjectAttribute title="{/#Bin/PickingArea/@sap:label}" text="{PickingArea}" visible="{= ${PickingArea} !== ''}" />
+                    <ObjectAttribute title="{/#stock/Warehouse/@sap:label}" text="{Warehouse}" />
+                    <ObjectAttribute title="{/#stock/StorageType/@sap:label}" text="{StorageType}" />
+                    <ObjectAttribute title="{/#stock/StorageLocation/@sap:label}" text="{StorageLocation}" />
+                    <ObjectAttribute title="{/#stock/Section/@sap:label}" text="{Section}" />
+                    <ObjectAttribute title="{/#stock/PickingArea/@sap:label}" text="{PickingArea}" visible="{= ${PickingArea} !== ''}" />
                 </attributes>
                 <statuses>
-                    <ObjectStatus title="{/#Bin/BlockReason/@sap:label}" text="{BlockReason}" state="Error" visible="{= ${BlockReason} !== ''}"/>
+                    <ObjectStatus title="{/#stock/BlockReason/@sap:label}" text="{BlockReason}" state="Error" visible="{= ${BlockReason} !== ''}"/>
                 </statuses>
             </ObjectHeader>
             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <items>
-                    <IconTabFilter text="{i18n>quantsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>quantsIconTabBarInfo}">
-                        <Table id="quantItemsList" width="auto" items="{Quants}" updateFinished="onQuantsUpdateFinished" noDataText="{i18n>quantLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+                    <IconTabFilter text="{i18n>binsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>binsIconTabBarInfo}">
+                        <Table id="binItemsList" width="auto" items="{Bins}" updateFinished="onBinsUpdateFinished" noDataText="{i18n>binLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
                             <headerToolbar>
                                 <Toolbar id="lineItemsToolbar">
-                                    <Title id="lineItemsHeader" text="{detailView>/quantItemListTitle}" />
+                                    <Title id="lineItemsHeader" text="{detailView>/binsItemListTitle}" />
                                 </Toolbar>
                             </headerToolbar>
                             <columns>
