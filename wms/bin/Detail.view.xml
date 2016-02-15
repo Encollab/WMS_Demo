@@ -1,5 +1,8 @@
-<mvc:View controllerName="yelcho.wmsdemo.bin.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
+<mvc:View controllerName="yelcho.wmsdemo.bin.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:semantic="sap.m.semantic">
     <semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>binDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+        <semantic:customHeaderContent>
+            <core:Fragment fragmentName="yelcho.wmsdemo.HomeButton" type="XML" />
+        </semantic:customHeaderContent>
         <semantic:content>
             <ObjectHeader responsive="true" fullScreenOptimized="false" title="{BinId}">
                 <attributes>

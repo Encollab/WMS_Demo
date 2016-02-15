@@ -35,6 +35,9 @@ sap.ui.define([
             return this.getOwnerComponent().getModel("i18n").getResourceBundle();
         },
 
+        onHomePress: function(oEvent) {
+            this.getRouter().navTo('default', {}, true);
+        },
         onNavBack: function(route) {
             var sPreviousHash = History.getInstance().getPreviousHash();
 
