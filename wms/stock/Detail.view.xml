@@ -6,9 +6,9 @@
         <semantic:content>
             <ObjectHeader responsive="true" fullScreenOptimized="false" title="{MaterialId}" intro="{Description}">
             </ObjectHeader>
-            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+<!--             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <items>
-                    <IconTabFilter text="{i18n>binsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>binsIconTabBarInfo}">
+                    <IconTabFilter text="{i18n>binsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>binsIconTabBarInfo}"> -->
                         <Table id="binItemsList" width="auto" items="{path:'Quants',parameters:{expand: 'Bin'}}" updateFinished="onBinsUpdateFinished" noDataText="{i18n>binLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin" itemPress="onBinPress">
                             <headerToolbar>
                                 <Toolbar id="lineItemsToolbar">
@@ -46,9 +46,9 @@
                                 </ColumnListItem>
                             </items>
                         </Table>
-                    </IconTabFilter>
+<!--                     </IconTabFilter>
                 </items>
-            </IconTabBar>
+            </IconTabBar> -->
         </semantic:content>
     </semantic:FullscreenPage>
 </mvc:View>

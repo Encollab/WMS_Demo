@@ -16,9 +16,9 @@
                     <ObjectStatus title="{/#Bin/BlockReason/@sap:label}" text="{BlockReason}" state="Error" visible="{= ${BlockReason} !== ''}"/>
                 </statuses>
             </ObjectHeader>
-            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+<!--             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <items>
-                    <IconTabFilter text="{i18n>quantsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>quantsIconTabBarInfo}">
+                    <IconTabFilter text="{i18n>quantsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>quantsIconTabBarInfo}"> -->
                         <Table id="quantItemsList" width="auto" items="{Quants}" updateFinished="onQuantsUpdateFinished" noDataText="{i18n>quantLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin" itemPress="onQuantPress">
                             <headerToolbar>
                                 <Toolbar id="lineItemsToolbar">
@@ -52,9 +52,9 @@
                                 </ColumnListItem>
                             </items>
                         </Table>
-                    </IconTabFilter>
+<!--                     </IconTabFilter>
                 </items>
-            </IconTabBar>
+            </IconTabBar> -->
         </semantic:content>
     </semantic:FullscreenPage>
 </mvc:View>
