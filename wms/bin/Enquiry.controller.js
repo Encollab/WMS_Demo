@@ -42,7 +42,7 @@ sap.ui.define([
         },
         onUpdateFinished: function(oEvent) {
             if(oEvent.getSource().getItems().length === 1) {
-                this.myRouter.navTo("bindetail", {
+                this.getRouter().navTo("bindetail", {
                     binPath: oEvent.getSource().getItems()[0].getBindingContext().getPath().substr(1)
                 });
             }
@@ -50,7 +50,7 @@ sap.ui.define([
         },
         onPress: function(oEvent) {
             var oItem = oEvent.getSource();
-            this.myRouter.navTo("bindetail", {
+            this.getRouter().navTo("bindetail", {
                 binPath: oItem.getBindingContext().getPath().substr(1)
             });
         }

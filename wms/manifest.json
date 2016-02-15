@@ -76,7 +76,7 @@
                 "name": "bin",
                 "target": "binEnquiry"
             }, {
-                "pattern": "bin/{materialPath}",
+                "pattern": "bin/{binPath}",
                 "name": "bindetail",
                 "target": "binDetail"
             }],

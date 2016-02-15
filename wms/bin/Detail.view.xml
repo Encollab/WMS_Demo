@@ -1,0 +1,57 @@
+<mvc:View controllerName="yelcho.wmsdemo.bin.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
+    <semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>binDetailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+        <semantic:content>
+            <ObjectHeader responsive="true" fullScreenOptimized="false" title="{BinId}">
+                <attributes>
+                    <ObjectAttribute title="{/#Bin/Warehouse/@sap:label}" text="{Warehouse}" />
+                    <ObjectAttribute title="{/#Bin/StorageType/@sap:label}" text="{StorageType}" />
+                    <ObjectAttribute title="{/#Bin/StorageLocation/@sap:label}" text="{StorageLocation}" />
+                    <ObjectAttribute title="{/#Bin/Section/@sap:label}" text="{Section}" />
+                    <ObjectAttribute title="{/#Bin/PickingArea/@sap:label}" text="{PickingArea}" visible="{= ${PickingArea} !== ''}" />
+                </attributes>
+                <statuses>
+                    <ObjectStatus title="{/#Bin/BlockReason/@sap:label}" text="{BlockReason}" state="Error" visible="{= ${BlockReason} !== ''}"/>
+                </statuses>
+            </ObjectHeader>
+            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter text="{i18n>quantsIconTabBarText}" icon="sap-icon://folder" tooltip="{i18n>quantsIconTabBarInfo}">
+                        <Table id="quantItemsList" width="auto" items="{Quants}" updateFinished="onQuantsUpdateFinished" noDataText="{i18n>quantLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+                            <headerToolbar>
+                                <Toolbar id="lineItemsToolbar">
+                                    <Title id="lineItemsHeader" text="{detailView>/quantItemListTitle}" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="{/#Quant/MaterialId/@sap:label}" />
+                                </Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+                                    <Text text="{/#Quant/TotalStock/@sap:label}" />
+                                </Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+                                    <Text text="{/#Quant/AvailableStock/@sap:label}" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <ObjectIdentifier title="{Material}" text="{MaterialId}" />
+                                        <ObjectNumber number="{
+									path: 'TotalStock',
+									formatter: '.formatter.Number'
+								}" unit="{BaseUoM}" />
+                                        <ObjectNumber number="{
+									path: 'AvailableStock',
+									formatter: '.formatter.Number'
+								}" unit="{BaseUoM}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </semantic:content>
+    </semantic:FullscreenPage>
+</mvc:View>
